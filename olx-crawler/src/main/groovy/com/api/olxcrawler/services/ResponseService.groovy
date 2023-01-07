@@ -42,7 +42,12 @@ class ResponseService {
 
             List<Element> adList = page.getElementsByClass('sc-12rk7z2-0 bjnzhV')
 
-             itemModelList += makeListofItemModel(adList)
+             try{
+                 itemModelList += makeListofItemModel(adList)
+             }catch(e)
+             {
+                 e.printStackTrace()
+             }
 
         }
         responseModel.searchTitle = searchTitle
