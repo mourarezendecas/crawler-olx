@@ -32,7 +32,12 @@ class ResponseService {
             Map queryParams = [o:pageNo.toString(), q:requestModel.title]
             Document page = connect(queryParams).parse()
             if(checkAds(page)){
-                return new InvalidResponseModel()
+                if(itemModelList.size()==0){
+                    return new InvalidResponseModel()
+                }
+                else{
+                    break
+                }
             }
 
             List<Element> adList = page.getElementsByClass('sc-12rk7z2-0 bjnzhV')

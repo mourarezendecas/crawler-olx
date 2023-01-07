@@ -13,8 +13,4 @@ class OlxCrawlerApplication {
 		SpringApplication.run(OlxCrawlerApplication, args)
 	}
 
-	@GetMapping("/")
-	def index(){
-		return "<h1>Ola mundo<h1>"
-	}
 }
